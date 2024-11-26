@@ -20,11 +20,13 @@ jobs:
       - name: Poetry install
         run: poetry install
       - name: Create output dir
-        run: mkdir output
+        run: mkdir -p .vercel/output
       - name: Move artifacts to vercel output dir
-        run: mv freetar output/
+        run: mv freetar .vercel/output/
       - name: List files in current state
         run: find .
+      - name: Where are we?
+        run: pwd
 #      - name: Create output dir
 #        run: mkdir -p ~/work/freetar/freetar/build
 #      - name: Build Project Artifacts
