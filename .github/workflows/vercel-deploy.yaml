@@ -37,10 +37,5 @@ jobs:
         run: pwd
       - name: builds.json
         run: cat .vercel/output/builds.json
-#      - name: Create output dir
-#        run: mkdir -p ~/work/freetar/freetar/build
-#      - name: Build Project Artifacts
-#        run: vercel --force build  --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel --force deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
-           
