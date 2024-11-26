@@ -30,7 +30,7 @@ jobs:
       - name: Where are we?
         run: pwd
       - name: Vercel Build
-        run: vercel --debug build
+        run: vercel --debug build --prod
 #      - name: Create output dir
 #        run: mkdir -p ~/work/freetar/freetar/build
 #      - name: Build Project Artifacts
