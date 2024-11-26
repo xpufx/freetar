@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Poetry from marketplace action
-        uses: snok/install-poetry@v1
+      - uses: snok/install-poetry@v1
       - name: Checkout action
       - uses: actions/checkout@v2
       #  your build commands
