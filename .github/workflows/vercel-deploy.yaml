@@ -17,9 +17,11 @@ jobs:
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Install Poetry from marketplace action
         uses: snok/install-poetry@v1
-      - name: Create output dir
-        run: mkdir -p ~/work/freetar/freetar/build
-      - name: Build Project Artifacts
-        run: vercel --force build  --prod --token=${{ secrets.VERCEL_TOKEN }}
-      - name: Deploy Project Artifacts to Vercel
-        run: vercel --force deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Poetry install
+        run: poetry install
+#      - name: Create output dir
+#        run: mkdir -p ~/work/freetar/freetar/build
+#      - name: Build Project Artifacts
+#        run: vercel --force build  --prod --token=${{ secrets.VERCEL_TOKEN }}
+#      - name: Deploy Project Artifacts to Vercel
+#        run: vercel --force deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
