@@ -14,7 +14,7 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
-        run: vercel --debug pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 #      - name: Install Poetry from marketplace action
 #        uses: snok/install-poetry@v1
 #      - name: Poetry install
@@ -30,15 +30,17 @@ jobs:
       - name: Where are we?
         run: pwd
       - name: Vercel Build
-        run: vercel --debug build --prod
+        run: vercel  build --prod
       - name: List files in current state
         run: find .
       - name: Where are we?
         run: pwd
+      - name: builds.json
+        run: cat .vercel/output/builds.json
 #      - name: Create output dir
 #        run: mkdir -p ~/work/freetar/freetar/build
 #      - name: Build Project Artifacts
 #        run: vercel --force build  --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
-        run: vercel --debug deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
            
