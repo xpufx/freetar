@@ -30,7 +30,7 @@ jobs:
       - name: Where are we?
         run: pwd
       - name: Vercel Build
-        run: vercel  build --prod
+        run: vercel  build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: List files in current state
         run: find .
       - name: Where are we?
