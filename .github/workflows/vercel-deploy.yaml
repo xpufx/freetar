@@ -19,6 +19,10 @@ jobs:
         uses: snok/install-poetry@v1
       - name: Poetry install
         run: poetry install
+      - name: Create output dir
+        run: mkdir output
+      - name: Move artifacts to vercel output dir
+        run: mv freetar output/
       - name: List files in current state
         run: find .
 #      - name: Create output dir
