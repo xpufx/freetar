@@ -15,20 +15,22 @@ jobs:
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-      - name: Install Poetry from marketplace action
-        uses: snok/install-poetry@v1
-      - name: Poetry install
-        run: poetry install
-      - name: Create output dir
-        run: mkdir -p .vercel/output
-      - name: Copy vercel config json
-        run: cp vercel.json .vercel/output/config.json
-      - name: Move artifacts to vercel output dir
-        run: mv freetar .vercel/output/
+#      - name: Install Poetry from marketplace action
+#        uses: snok/install-poetry@v1
+#      - name: Poetry install
+#        run: poetry install
+#      - name: Create output dir
+#        run: mkdir -p .vercel/output
+#      - name: Copy vercel config json
+#        run: cp vercel.json .vercel/output/config.json
+#      - name: Move artifacts to vercel output dir
+#        run: mv freetar .vercel/output/
       - name: List files in current state
         run: find .
       - name: Where are we?
         run: pwd
+      - name: Vercel Build
+        run: vercel build
 #      - name: Create output dir
 #        run: mkdir -p ~/work/freetar/freetar/build
 #      - name: Build Project Artifacts
