@@ -22,7 +22,7 @@ jobs:
       - name: Create output dir
         run: mkdir -p .vercel/output
       - name: Copy vercel config json
-        run: cp vercel.json .vercel/output/
+        run: cp vercel.json .vercel/output/config.json
       - name: Move artifacts to vercel output dir
         run: mv freetar .vercel/output/
       - name: List files in current state
